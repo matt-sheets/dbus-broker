@@ -347,9 +347,7 @@ static int bus_selinux_log(int type, const char *fmt, ...) {
  * the SIGHUP is caught in the launcher. So, send a SIGHUP to our parent to
  * reload all configs.
  */
-static int
-policy_reload_callback (int seqno)
-{
+static int policy_reload_callback(int seqno) {
         pid_t ppid = getppid();
         return kill(ppid, SIGHUP);
 }
